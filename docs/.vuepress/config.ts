@@ -29,40 +29,8 @@ export default defineUserConfig({
         content:
           "「Java学习 + 面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识。准备 Java 面试，首选 JavaGuide！",
       },
-    ],
-    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
-    // 添加百度统计 - 异步加载避免阻塞渲染
-    [
-      "script",
-      { defer: true },
-      `var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?5dd2e8c97962d57b7b8fea1737c01743";
-          hm.async = true;
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();`,
-    ],
+    ]
   ],
-
-  bundler: viteBundler({
-    viteOptions: {
-      build: {
-        chunkSizeWarningLimit: 1000,
-        rollupOptions: {
-          output: {
-            manualChunks: {
-              // 将大型第三方库分离成单独的 chunk
-              vue: ["vue", "vue-router"],
-              // VuePress 相关
-              vuepress: ["vuepress"],
-            },
-          },
-        },
-      },
-    },
-  }),
 
   theme,
 
