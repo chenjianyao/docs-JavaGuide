@@ -6,9 +6,9 @@
   "license": "MIT",
   "author": "Guide",
   "scripts": {
-    "docs:build": "vuepress build docs",
-    "docs:dev": "vuepress dev docs",
-    "docs:clean-dev": "vuepress dev docs --clean-cache",
+    "docs:build": "vuepress-vite build docs",
+    "docs:dev": "vuepress-vite dev docs",
+    "docs:clean-dev": "vuepress-vite dev docs --clean-cache",
     "lint": "pnpm lint:prettier && pnpm lint:md",
     "lint:md": "markdownlint-cli2 '**/*.md'",
     "lint:prettier": "prettier --check --write .",
