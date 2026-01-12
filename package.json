@@ -12,7 +12,6 @@
     "lint": "pnpm lint:prettier && pnpm lint:md",
     "lint:md": "markdownlint-cli2 '**/*.md'",
     "lint:prettier": "prettier --check --write .",
-    "prepare": "husky",
     "update": "pnpm dlx vp-update"
   },
   "nano-staged": {
