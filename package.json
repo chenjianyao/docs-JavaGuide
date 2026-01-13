@@ -1,37 +1,15 @@
 {
-  "name": "javaguide",
-  "version": "2.0.0-alpha.40",
+  "name": "docs-template",
+  "description": "a vitepress site template, updated at 2026-01-13",
+  "version": "1.0.0",
   "private": true,
-  "description": "javaguide",
-  "license": "MIT",
-  "author": "Guide",
   "scripts": {
-    "docs:build": "vuepress build docs",
-    "docs:dev": "vuepress dev docs",
-    "docs:clean-dev": "vuepress dev docs --clean-cache",
-    "lint": "pnpm lint:prettier && pnpm lint:md",
-    "lint:md": "markdownlint-cli2 '**/*.md'",
-    "lint:prettier": "prettier --check --write .",
-    "prepare": "husky",
-    "update": "pnpm dlx vp-update"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
-  "nano-staged": {
-    "**/*": "prettier --write --ignore-unknown",
-    ".md": "markdownlint-cli2"
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.15"
   },
-  "dependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.24",
-    "@vuepress/plugin-feed": "2.0.0-rc.112",
-    "@vuepress/plugin-search": "2.0.0-rc.112",
-    "husky": "9.1.7",
-    "markdownlint-cli2": "0.17.1",
-    "mathjax-full": "3.2.2",
-    "nano-staged": "0.8.0",
-    "prettier": "3.4.2",
-    "sass-embedded": "1.89.2",
-    "vue": "^3.5.18",
-    "vuepress": "2.0.0-rc.24",
-    "vuepress-theme-hope": "2.0.0-rc.94"
-  },
-  "packageManager": "pnpm@10.0.0"
+  "packageManager": "pnpm@10.22.0"
 }
