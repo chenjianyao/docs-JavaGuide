@@ -2,14 +2,14 @@ name: Deploy VitePress site to GitHub Pages
 
 on:
   push:
-    branches: [vite]
+    branches: [main]
   # 允许你从 Actions 选项卡手动运行此工作流程  
   workflow_dispatch:
 
 # 只允许同时进行一次部署，跳过正在运行和最新队列之间的运行队列
 # 但是，不要取消正在进行的运行，因为我们希望允许这些生产部署完成
 concurrency:
-  group: pages
+  group: docs-javaguide-deploy
   cancel-in-progress: false
 
 jobs:
@@ -31,16 +31,16 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 22
-          cache: npm # 或 pnpm / yarn
+          cache: pnpm # 或 pnpm / yarn
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Install dependencies
-        run: npm ci # 或 pnpm install --frozen-lockfile / yarn install / bun install
+        run: pnpm install --frozen-lockfile # 或 pnpm install --frozen-lockfile / yarn install / bun install
 
       - name: Build with VitePress
-        run: npm run docs:build # 或 pnpm run docs:build / yarn docs:build / bun run docs:build
+        run: pnpm run docs:build # 或 pnpm run docs:build / yarn docs:build / bun run docs:build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
